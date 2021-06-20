@@ -15,7 +15,7 @@ function apiReducer(state= initialState, action ) {
            case FETCH_START :
                return {
                    list : [],
-                   loading : false,
+                   loading : true,
                    error : false
                };
            case FETCH_SUCCESS :
