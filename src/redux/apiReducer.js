@@ -20,7 +20,7 @@ function apiReducer(state= initialState, action ) {
                };
            case FETCH_SUCCESS :
                return {
-                   list : action.data,
+                   list : action.payload,
                    loading : false,
                    error : false
                };
@@ -30,6 +30,8 @@ function apiReducer(state= initialState, action ) {
                    loading : false,
                    error : true
                };
+           default :
+               return state
        }
 }
 
