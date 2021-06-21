@@ -3,7 +3,7 @@ import {takeEvery,put, call } from 'redux-saga/effects'
 import axios from "axios";
 
  export function* watchFetch() {
-    yield takeEvery(FETCH_DATA, fetchWorkerAsync )
+    yield takeEvery( FETCH_DATA , fetchWorkerAsync )
 }
 
 function* fetchWorkerAsync() {

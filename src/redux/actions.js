@@ -1,15 +1,18 @@
 import { FETCH_FAILURE, FETCH_START, FETCH_SUCCESS } from "./apiReducer";
-export const FETCH_DATA = 'FETCH_DATA'
+export const FETCH_DATA = 'FETCH_DATA';
+
+const baseUrl = 'https://restcountries.eu/rest/v2';
+
 
 export const startRequest = () =>{
-    return  {type: FETCH_START }
+    return  { type: FETCH_START }
 }
 export  const success = (data) =>{
-    return  {type: FETCH_SUCCESS, payload: data  }
+    return  { type: FETCH_SUCCESS, payload: data  }
 }
 export const errorMessage = () =>{
-    return  {type: FETCH_FAILURE }
+    return  { type: FETCH_FAILURE }
 }
 export const fetchData = () =>{
-    return  {type: FETCH_DATA }
+    return  { type: FETCH_DATA  }
 }
