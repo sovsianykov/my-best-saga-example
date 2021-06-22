@@ -3,6 +3,8 @@ export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 const initialState = {
+    currency : [],
+    country : [],
     list : [],
     loading : false,
     error : false
