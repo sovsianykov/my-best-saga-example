@@ -6,11 +6,11 @@ import axios from "axios";
     yield takeEvery( FETCH_DATA , fetchWorkerAsync )
 }
 
-function* fetchWorkerAsync() {
+function* fetchWorkerAsync({ url  }) {
        try {
            yield put(startRequest())
            const data = yield call(()=>{
-               return axios.get('https://restcountries.eu/rest/v2/all')
+               return axios.get(url)
                    .then(res =>res.data)
            });
            yield put(success(data));
