@@ -12,8 +12,6 @@ const MainTable = () => {
         dispatch(fetchData("/all"))
     }
     const state = useSelector(state => state.apiReducer)
-    console.log( state )
-
 
     return (
         <>
@@ -23,6 +21,7 @@ const MainTable = () => {
                     <caption>Main Table</caption>
                     <thead>
                     <tr>
+                        <th>N </th>
                         <th>COUNTRY NAME</th>
                         <th>Native name</th>
                         <th>Capital</th>
@@ -36,7 +35,17 @@ const MainTable = () => {
                     { state.loading ? <tr><td>Loading...</td></tr> : state.error
                         ? <tr><td>Error, try again</td></tr> :
                         state.list.map((country,id) => (
-                            <Row key={id} country = {country} />
+                            <Row key={id}
+                                 id = { id + 1 }
+                                 name = {country.name}
+                                 nativeName = {country.nativeName}
+                                 capital = {country.capital}
+                                 flag = {country.flag}
+                                 population = {country.population}
+                                 region = {country.region}
+                                 currencies = {country.currencies[0].name}
+
+                            />
                         ))
                     }
                     </tbody>
